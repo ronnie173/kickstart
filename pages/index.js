@@ -15,12 +15,14 @@ class CampaignIndex extends Component {
         const items = this.props.campaigns.map(address => {
             return {
                 header: address,
-                description: <a>View Campaigns</a>,
+                description: (
+                        <a>View Campaign</a>
+                ),
                 fluid: true
             };
         });
-        return <Card.Group items={items}/>;
 
+        return <Card.Group items={items} />;
     }
 
     render() {

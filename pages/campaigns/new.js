@@ -7,7 +7,7 @@ import web3 from '../../ethereum/web3';
 class CampaignNew extends Component {
     state = {
         minimumContribution: '',
-        errorMesage:''
+        errorMessage:''
 
     };
 
@@ -33,7 +33,7 @@ class CampaignNew extends Component {
         return (
             <Layout>
                 <h3>Create a Campaign</h3>
-                <Form onSubmit={this.onSubmit} error={!!this.state.errorMesage}>
+                <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
                         <label>Minimum Contribution</label>
                         <Input label="wei"
@@ -45,6 +45,7 @@ class CampaignNew extends Component {
                                    })}
                         />
                     </Form.Field>
+                    <Message error header="Oops!" content={this.state.errorMessage}/>
                     <Button primary>Create</Button>
                 </Form>
             </Layout>
